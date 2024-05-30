@@ -1,0 +1,112 @@
+Report with train
+Test Accuracy: 98.26%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.98      0.99      0.98       979
+         1.0       0.97      0.96      0.96       847
+         2.0       0.97      0.99      0.98       737
+         3.0       0.99      0.99      0.99      2424
+
+    accuracy                           0.98      4987
+   macro avg       0.98      0.98      0.98      4987
+weighted avg       0.98      0.98      0.98      4987
+
+Confusion matrix
+[[ 968   11    0    0]
+ [  11  814   11   11]
+ [   0    0  726   11]
+ [   8   16    8 2392]]
+_____________________________
+Report with test
+Test Accuracy: 93.65%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.82      0.90      0.86        10
+         1.0       0.90      1.00      0.95         9
+         2.0       0.88      0.88      0.88         8
+         3.0       1.00      0.94      0.97        36
+
+    accuracy                           0.94        63
+   macro avg       0.90      0.93      0.91        63
+weighted avg       0.94      0.94      0.94        63
+
+Confusion matrix
+[[ 9  1  0  0]
+ [ 0  9  0  0]
+ [ 1  0  7  0]
+ [ 1  0  1 34]]
+_____________________________
+Report with validation
+Test Accuracy: 93.94%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00         6
+         1.0       1.00      0.60      0.75         5
+         2.0       0.80      1.00      0.89         4
+         3.0       0.95      1.00      0.97        18
+
+    accuracy                           0.94        33
+   macro avg       0.94      0.90      0.90        33
+weighted avg       0.95      0.94      0.93        33
+
+Confusion matrix
+[[ 6  0  0  0]
+ [ 0  3  1  1]
+ [ 0  0  4  0]
+ [ 0  0  0 18]]
+Hyperparameters:
+
+MAX_SEQ_LENGTH: 200
+NUM_FEATURES: 1024
+IMG_SIZE: 128
+
+BATCH_SIZE: 1024
+TEST_RATIO: 0.1
+VALIDATION_RATIO: 0.05
+HOLDOUT_RATIO: 0.04
+CLASSES: 4
+
+EPOCHS: 40
+_____________________________________
+Data:
+
+Frame features in train set: (4987, 1024)
+Frame masks in train set: (4987,)
+Frame labels in train set: (4987, 1)
+Clases 0.0: 979 cantidad, 19.63%
+Clases 1.0: 847 cantidad, 16.98%
+Clases 2.0: 737 cantidad, 14.78%
+Clases 3.0: 2424 cantidad, 48.61%
+
+Frame features in test set: (63, 1024)
+Frame masks in test set: (63,)
+Frame labels in test set: (63, 1)
+Clases 0.0: 10 cantidad, 15.87%
+Clases 1.0: 9 cantidad, 14.29%
+Clases 2.0: 8 cantidad, 12.70%
+Clases 3.0: 36 cantidad, 57.14%
+
+Frame features in validation set: (33, 1024)
+Frame masks in validation set: (33,)
+Frame labels in validation set: (33, 1)
+Clases 0.0: 6 cantidad, 18.18%
+Clases 1.0: 5 cantidad, 15.15%
+Clases 2.0: 4 cantidad, 12.12%
+Clases 3.0: 18 cantidad, 54.55%
+_____________________________________
+Model: "sequential_111"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_0 (Dense)             (None, 8)                 8200      
+                                                                 
+ dense_1 (Dense)             (None, 4)                 36        
+                                                                 
+=================================================================
+Total params: 8,236
+Trainable params: 8,236
+Non-trainable params: 0
+_________________________________________________________________

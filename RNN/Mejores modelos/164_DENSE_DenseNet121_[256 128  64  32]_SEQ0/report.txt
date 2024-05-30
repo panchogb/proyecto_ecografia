@@ -1,0 +1,77 @@
+ 1/26 [>.............................] - ETA: 1s26/26 [==============================] - 0s 2ms/step
+ 1/26 [>.............................] - ETA: 0s - loss: 0.2667 - accuracy: 0.937526/26 [==============================] - 0s 1ms/step - loss: 0.7110 - accuracy: 0.8307
+Test Accuracy: 83.07%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.83      0.78      0.81       130
+         1.0       0.64      0.74      0.69       112
+         2.0       0.71      0.68      0.70       110
+         3.0       0.91      0.90      0.91       457
+
+    accuracy                           0.83       809
+   macro avg       0.77      0.78      0.77       809
+weighted avg       0.83      0.83      0.83       809
+
+Confusion matrix
+[[102  18   3   7]
+ [  5  83  10  14]
+ [  8   9  75  18]
+ [  8  20  17 412]]
+Hyperparameters:
+
+MAX_SEQ_LENGTH: 50
+NUM_FEATURES: 1024
+IMG_SIZE: 128
+
+BATCH_SIZE: 5
+VALIDATION_RATIO: 0.025
+CLASSES: 4
+
+EPOCHS: 100
+_____________________________________
+Data:
+
+Frame features in train set: (4139, 1024)
+Frame masks in train set: (4139,)
+Frame labels in train set: (4139, 1)
+Clases 0.0: 692 cantidad, 16.72%
+Clases 1.0: 600 cantidad, 14.50%
+Clases 2.0: 508 cantidad, 12.27%
+Clases 3.0: 2339 cantidad, 56.51%
+
+Frame features in test set: (809, 1024)
+Frame masks in test set: (809,)
+Frame labels in test set: (809, 1)
+Clases 0.0: 130 cantidad, 16.07%
+Clases 1.0: 112 cantidad, 13.84%
+Clases 2.0: 110 cantidad, 13.60%
+Clases 3.0: 457 cantidad, 56.49%
+
+Frame features in validation set: (108, 1024)
+Frame masks in validation set: (108,)
+Frame labels in validation set: (108, 1)
+Clases 0.0: 18 cantidad, 16.67%
+Clases 1.0: 16 cantidad, 14.81%
+Clases 2.0: 14 cantidad, 12.96%
+Clases 3.0: 60 cantidad, 55.56%
+_____________________________________
+Model: "sequential_13"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_57 (Dense)            (None, 256)               262400    
+                                                                 
+ dense_58 (Dense)            (None, 128)               32896     
+                                                                 
+ dense_59 (Dense)            (None, 64)                8256      
+                                                                 
+ dense_60 (Dense)            (None, 32)                2080      
+                                                                 
+ dense_61 (Dense)            (None, 4)                 132       
+                                                                 
+=================================================================
+Total params: 305,764
+Trainable params: 305,764
+Non-trainable params: 0
+_________________________________________________________________

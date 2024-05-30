@@ -1,0 +1,124 @@
+Report with train
+Test Accuracy: 96.07%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.97      0.96      0.97      1326
+         1.0       0.92      0.99      0.95      1156
+         2.0       0.94      1.00      0.97      1003
+         3.0       1.00      0.92      0.96      1602
+
+    accuracy                           0.96      5087
+   macro avg       0.96      0.97      0.96      5087
+weighted avg       0.96      0.96      0.96      5087
+
+Confusion matrix
+[[1275   51    0    0]
+ [  17 1139    0    0]
+ [   0    0 1003    0]
+ [  24   48   60 1470]]
+_____________________________
+Report with test
+Test Accuracy: 82.11%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.61      0.88      0.72        16
+         1.0       0.67      0.62      0.64        13
+         2.0       0.80      0.67      0.73        12
+         3.0       0.96      0.89      0.92        54
+
+    accuracy                           0.82        95
+   macro avg       0.76      0.76      0.75        95
+weighted avg       0.84      0.82      0.83        95
+
+Confusion matrix
+[[14  1  0  1]
+ [ 4  8  0  1]
+ [ 2  2  8  0]
+ [ 3  1  2 48]]
+_____________________________
+Report with validation
+Test Accuracy: 75.38%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       0.64      0.64      0.64        11
+         1.0       0.62      0.80      0.70        10
+         2.0       0.60      0.75      0.67         8
+         3.0       0.90      0.78      0.84        36
+
+    accuracy                           0.75        65
+   macro avg       0.69      0.74      0.71        65
+weighted avg       0.78      0.75      0.76        65
+
+Confusion matrix
+[[ 7  3  0  1]
+ [ 2  8  0  0]
+ [ 0  0  6  2]
+ [ 2  2  4 28]]
+Hyperparameters:
+
+MAX_SEQ_LENGTH: 40
+NUM_FEATURES: 1280
+IMG_SIZE: 128
+
+BATCH_SIZE: 512
+TEST_RATIO: 0.15
+VALIDATION_RATIO: 0.1
+HOLDOUT_RATIO: 0.04
+CLASSES: 4
+
+EPOCHS: 40
+_____________________________________
+Data:
+
+Frame features in train set: (5087, 1280)
+Frame masks in train set: (5087,)
+Frame labels in train set: (5087, 1)
+Clases 0.0: 1326 cantidad, 26.07%
+Clases 1.0: 1156 cantidad, 22.72%
+Clases 2.0: 1003 cantidad, 19.72%
+Clases 3.0: 1602 cantidad, 31.49%
+
+Frame features in test set: (95, 1280)
+Frame masks in test set: (95,)
+Frame labels in test set: (95, 1)
+Clases 0.0: 16 cantidad, 16.84%
+Clases 1.0: 13 cantidad, 13.68%
+Clases 2.0: 12 cantidad, 12.63%
+Clases 3.0: 54 cantidad, 56.84%
+
+Frame features in validation set: (65, 1280)
+Frame masks in validation set: (65,)
+Frame labels in validation set: (65, 1)
+Clases 0.0: 11 cantidad, 16.92%
+Clases 1.0: 10 cantidad, 15.38%
+Clases 2.0: 8 cantidad, 12.31%
+Clases 3.0: 36 cantidad, 55.38%
+_____________________________________
+Model: "sequential_511"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_0 (Dense)             (None, 128)               163968    
+                                                                 
+ dropout_631 (Dropout)       (None, 128)               0         
+                                                                 
+ dense_1 (Dense)             (None, 128)               16512     
+                                                                 
+ dropout_632 (Dropout)       (None, 128)               0         
+                                                                 
+ dense_2 (Dense)             (None, 128)               16512     
+                                                                 
+ dropout_633 (Dropout)       (None, 128)               0         
+                                                                 
+ dense_3 (Dense)             (None, 128)               16512     
+                                                                 
+ dense_4 (Dense)             (None, 4)                 516       
+                                                                 
+=================================================================
+Total params: 214,020
+Trainable params: 214,020
+Non-trainable params: 0
+_________________________________________________________________

@@ -1,0 +1,82 @@
+1/5 [=====>........................] - ETA: 7s3/5 [=================>............] - ETA: 0s4/5 [=======================>......] - ETA: 0s5/5 [==============================] - 2s 42ms/step
+1/5 [=====>........................] - ETA: 0s - loss: 0.5684 - accuracy: 0.90623/5 [=================>............] - ETA: 0s - loss: 0.2178 - accuracy: 0.96885/5 [==============================] - ETA: 0s - loss: 0.2343 - accuracy: 0.96245/5 [==============================] - 0s 42ms/step - loss: 0.2343 - accuracy: 0.9624
+Test Accuracy: 96.24%
+Classification Report:
+               precision    recall  f1-score   support
+
+         0.0       1.00      1.00      1.00        21
+         1.0       1.00      0.90      0.95        42
+         2.0       1.00      0.91      0.95        11
+         3.0       0.92      1.00      0.96        59
+
+    accuracy                           0.96       133
+   macro avg       0.98      0.95      0.97       133
+weighted avg       0.97      0.96      0.96       133
+
+Confusion matrix
+[[21  0  0  0]
+ [ 0 38  0  4]
+ [ 0  0 10  1]
+ [ 0  0  0 59]]
+Hyperparameters:
+
+MAX_SEQ_LENGTH: 300
+NUM_FEATURES: 1024
+IMG_SIZE: 128
+
+BATCH_SIZE: 25
+VALIDATION_RATIO: 0.04
+CLASSES: 4
+
+EPOCHS: 50
+_____________________________________
+Data:
+
+Frame features in train set: (669, 300, 1024)
+Frame masks in train set: (669, 300)
+Frame labels in train set: (669, 1)
+Clases 0.0: 90 cantidad, 13.45%
+Clases 1.0: 185 cantidad, 27.65%
+Clases 2.0: 65 cantidad, 9.72%
+Clases 3.0: 329 cantidad, 49.18%
+
+Frame features in test set: (133, 300, 1024)
+Frame masks in test set: (133, 300)
+Frame labels in test set: (133, 1)
+Clases 0.0: 21 cantidad, 15.79%
+Clases 1.0: 42 cantidad, 31.58%
+Clases 2.0: 11 cantidad, 8.27%
+Clases 3.0: 59 cantidad, 44.36%
+
+Frame features in validation set: (29, 300, 1024)
+Frame masks in validation set: (29, 300)
+Frame labels in validation set: (29, 1)
+Clases 0.0: 4 cantidad, 13.79%
+Clases 1.0: 8 cantidad, 27.59%
+Clases 2.0: 3 cantidad, 10.34%
+Clases 3.0: 14 cantidad, 48.28%
+_____________________________________
+Model: "model_7"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_15 (InputLayer)          [(None, 300, 1024)]  0           []                               
+                                                                                                  
+ input_16 (InputLayer)          [(None, 300)]        0           []                               
+                                                                                                  
+ gru_6 (GRU)                    (None, 300, 8)       24816       ['input_15[0][0]',               
+                                                                  'input_16[0][0]']               
+                                                                                                  
+ gru_7 (GRU)                    (None, 8)            432         ['gru_6[0][0]']                  
+                                                                                                  
+ dropout_7 (Dropout)            (None, 8)            0           ['gru_7[0][0]']                  
+                                                                                                  
+ dense_16 (Dense)               (None, 4)            36          ['dropout_7[0][0]']              
+                                                                                                  
+ dense_17 (Dense)               (None, 4)            20          ['dense_16[0][0]']               
+                                                                                                  
+==================================================================================================
+Total params: 25,304
+Trainable params: 25,304
+Non-trainable params: 0
+__________________________________________________________________________________________________
